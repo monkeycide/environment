@@ -1,5 +1,6 @@
 #! /usr/bin/env bash
 
+
 BASEDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 TMUXCONF="${BASEDIR}/tmux.conf"
@@ -9,6 +10,11 @@ TMUXCONF_BAK="${TMUXCONF_ORG}.bak"
 VIMRC="${BASEDIR}/vimrc"
 VIMRCORG="${HOME}/.vimrc"
 VIMRCBAK="${VIMRCORG}.bak"
+
+ZSHRC="${BASEDIR}/zshrc"
+ZSHRCORG="${HOME}/.zshrc"
+ZSHRCBAK="${VIMRCORG}.bak"
+
 
 function backup_and_symlink() {
     if [ -L ${2} ]; then
@@ -22,6 +28,8 @@ function backup_and_symlink() {
     fi 
 }
 
+
 # various configs
-backup_and_symlink $VIMRC $VIMRCORG $VIMRCBAK
 backup_and_symlink $TMUXCONF $TMUXCONF_ORG $TMUXCONF_BAK
+backup_and_symlink $VIMRC $VIMRCORG $VIMRCBAK
+backup_and_symlink $ZSHRC $ZSHRCORG $ZSHRCBAK
