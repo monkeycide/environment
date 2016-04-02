@@ -4,7 +4,7 @@ BASEDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 TMUXCONF="${BASEDIR}/tmux.conf"
 TMUXCONF_ORG="${HOME}/.tmux.conf"
-TMUXCONF_BAK="${VIMRCORG}.bak"
+TMUXCONF_BAK="${TMUXCONF_ORG}.bak"
 
 VIMRC="${BASEDIR}/vimrc"
 VIMRCORG="${HOME}/.vimrc"
