@@ -2,6 +2,10 @@
 
 BASEDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
+TMUXCONF="${BASEDIR}/tmux.conf"
+TMUXCONF_ORG="${HOME}/.tmux.conf"
+TMUXCONF_BAK="${VIMRCORG}.bak"
+
 VIMRC="${BASEDIR}/vimrc"
 VIMRCORG="${HOME}/.vimrc"
 VIMRCBAK="${VIMRCORG}.bak"
@@ -18,5 +22,6 @@ function backup_and_symlink() {
     fi 
 }
 
-# configure vim
+# various configs
 backup_and_symlink $VIMRC $VIMRCORG $VIMRCBAK
+backup_and_symlink $TMUXCONF $TMUXCONF_ORG $TMUXCONF_BAK
