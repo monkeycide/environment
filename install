@@ -1,0 +1,22 @@
+#! /usr/bin/env bash
+
+BASEDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+VIMRC="${BASEDIR}/vimrc"
+VIMRCORG="${HOME}/.vimrc"
+VIMRCBAK="${VIMRCORG}.bak"
+
+function backup_and_symlink() {
+    if [ -L ${2} ]; then
+        echo "the file \"${1}\" is already symlinked...skipping installation of ${1}"
+    elif [ ! -L ${2} ]; then
+        echo "the file \"${2}\" is not a symlink...proceeding with installation"
+        mv ${2} ${3}
+        echo "the original ${2} has been archived to ${3}"
+        echo "symlinking ${1} to ${2}"
+        ln -s ${1} ${2}
+    fi 
+}
+
+# configure vim
+backup_and_symlink $VIMRC $VIMRCORG $VIMRCBAK
