@@ -3,6 +3,10 @@
 
 BASEDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
+FZFCONF="${BASEDIR}/fzf.zsh"
+FZFCONF_ORG="${HOME}/.fzf.zsh"
+FZFCONF_BAK="${FZFCONF_ORG}.bak"
+
 TMUXCONF="${BASEDIR}/tmux.conf"
 TMUXCONF_ORG="${HOME}/.tmux.conf"
 TMUXCONF_BAK="${TMUXCONF_ORG}.bak"
@@ -32,4 +36,5 @@ function backup_and_symlink() {
 # various configs
 backup_and_symlink $TMUXCONF $TMUXCONF_ORG $TMUXCONF_BAK
 backup_and_symlink $VIMRC $VIMRCORG $VIMRCBAK
+backup_and_symlink $FZFCONF $FZFCONF_ORG $FZFCONF_BAK
 backup_and_symlink $ZSHRC $ZSHRCORG $ZSHRCBAK
