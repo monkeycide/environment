@@ -15,7 +15,8 @@ $'
 
 PATH=/usr/local/bin:$HOME/bin:$PATH
 
-# add my identity
+# ssh stuff
 alias github-prep="ssh-add ~/.ssh/id_rsa.github"
+eval `ssh-agent -s`
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
