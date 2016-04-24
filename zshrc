@@ -5,6 +5,7 @@ alias cdi="cd ~/dev/projects/prototypes"
 
 alias t="tmux"
 alias ta="tmux attach-session -t"
+alias tns="tmux new -s"
 alias tls="tmux list-sessions"
 
 HISTCONTROL=ignorespace
